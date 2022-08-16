@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-    etapa_description: {
+    bonificacion_description: {
         type: mongoose.ObjectId,
         required: true,
     },
@@ -22,4 +22,4 @@ const schema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Etapa', schema)
+module.exports = mongoose.model('Bonificación', schema)

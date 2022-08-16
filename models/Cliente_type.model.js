@@ -2,14 +2,9 @@ const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
     etapa_description: {
-        type: mongoose.ObjectId,
+        type: String,
         required: true,
-    },
-    createdAt: Date,
-    updatedAt: Date,
-    createdBy: String,
-    updatedBy: String,
-    title: String,
+        },
 }, 
 
 {
@@ -22,4 +17,4 @@ const schema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Etapa', schema)
+module.exports = mongoose.model('Cliente_type', schema)

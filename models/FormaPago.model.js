@@ -1,15 +1,18 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-    etapa_description: {
-        type: mongoose.ObjectId,
+    formaPago_description: {
+        type: String,
         required: true,
-    },
-    createdAt: Date,
-    updatedAt: Date,
-    createdBy: String,
-    updatedBy: String,
-    title: String,
+        },
+    plazos:{
+        type: String,
+        required: false,
+        },
+    documentacion:{
+        type: String,
+        required: false,
+        },
 }, 
 
 {
@@ -22,4 +25,4 @@ const schema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Etapa', schema)
+module.exports = mongoose.model('FormaPago', schema)

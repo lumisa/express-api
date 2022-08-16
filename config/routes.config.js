@@ -13,6 +13,12 @@ const users = require('../controllers/users.controller')
 const upload = require('../config/multer.config')
 const subvencion = require('../controllers/subvencion.controller')
 const timeline = require('../controllers/timeline.controller')
+const etapa = require('../controllers/etapa.controller')
+const etapaTypes = require('../controllers/etapaType.controller')
+const clienteTypes = require('../controllers/clienteType.controller')
+const formaPago = require('../controllers/formaPago.controller')
+const bonificacion = require('../controllers/bonificacion.controller')
+
 //subvencion
 router.get('/subvencion', sec.auth, subvencion.list)
 router.post('/subvencion', sec.auth, subvencion.create)
@@ -69,11 +75,32 @@ router.delete('/timeline/:id', sec.auth, timeline.remove);
 router.get('/timeline-context/:id', sec.auth, timeline.context);
 
 //etapa
-router.get('/etapa', sec.auth, opportunityTypes.list);
-router.post('/etapa', sec.auth, opportunityTypes.create)
-router.get('/etapa/:id', sec.auth, opportunityTypes.detail);
-router.patch('/etapa/:id', sec.auth, opportunityTypes.update);
-router.delete('/etapa/:id', sec.auth, opportunityTypes.remove);
+router.get('/etapa', sec.auth, etapa.list);
+router.post('/etapa', sec.auth, etapa.create)
+router.get('/etapa/:id', sec.auth, etapa.detail);
+router.patch('/etapa/:id', sec.auth, etapa.update);
+router.delete('/etapa/:id', sec.auth, etapa.remove);
+
+//etapa_types
+router.get('/etapa-types', sec.auth, etapaTypes.list);
+router.post('/etapa-types', sec.auth, etapaTypes.create)
+router.get('/etapa-types/:id', sec.auth, etapaTypes.detail);
+router.patch('/etapa-types/:id', sec.auth, etapaTypes.update);
+router.delete('/etapa-types/:id', sec.auth, etapaTypes.remove);
+
+//cliente_types
+router.get('/cliente-types', sec.auth, clienteTypes.list);
+router.post('/cliente-types', sec.auth, clienteTypes.create)
+router.get('/cliente-types/:id', sec.auth, clienteTypes.detail);
+router.patch('/cliente-types/:id', sec.auth, clienteTypes.update);
+router.delete('/cliente-types/:id', sec.auth, clienteTypes.remove);
+
+//formaPago
+router.get('/formaPago', sec.auth, formaPago.list);
+router.post('/formaPago', sec.auth, formaPago.create)
+router.get('/formaPago/:id', sec.auth, formaPago.detail);
+router.patch('/formaPago/:id', sec.auth, formaPago.update);
+router.delete('/formaPago/:id', sec.auth, formaPago.remove);
 
 //activities
 router.get('/activities', sec.auth, activities.list);
@@ -109,6 +136,13 @@ router.post('/autoconsumo-types', sec.auth, autoconsumoTypes.create)
 router.get('/autoconsumo-types/:id', sec.auth, autoconsumoTypes.detail);
 router.patch('/autoconsumo-types/:id', sec.auth, autoconsumoTypes.update);
 router.delete('/autoconsumo-types/:id', sec.auth, autoconsumoTypes.remove);
+
+//bonificacion
+router.get('/bonificacion', sec.auth, bonificacion.list);
+router.post('/bonificacion', sec.auth, bonificacion.create)
+router.get('/bonificacion/:id', sec.auth, bonificacion.detail);
+router.patch('/bonificacion/:id', sec.auth, bonificacion.update);
+router.delete('/bonificacion/:id', sec.auth, bonificacion.remove);
 
 //auth
 router.post('/users', sec.auth, users.create);
