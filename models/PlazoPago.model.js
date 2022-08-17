@@ -1,17 +1,9 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-    formaPago_description: {
+    plazos_description: {
         type: String,
         required: true,
-        },
-    plazos:{
-        type: mongoose.ObjectId,
-        required: required,
-        },
-    documentacion:{
-        type: mongoose.ObjectId,
-        required: false,
         },
 }, 
 
@@ -25,4 +17,4 @@ const schema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('FormaPago', schema)
+module.exports = mongoose.model('PlazosPago', schema)
