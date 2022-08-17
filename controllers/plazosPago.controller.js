@@ -1,4 +1,4 @@
-const PlazosPago = require('../models/Etapa_type.model');
+const PlazosPago = require('../models/PlazosPago.model');
 const createError = require('http-errors');
 
 const list = (req, res, next) => {
