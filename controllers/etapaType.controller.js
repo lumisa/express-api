@@ -16,7 +16,7 @@ const create = (req, res, next) => {
 
     EtapaTypes.create({
         ...data,
-        image: req.file?.path
+        //todo
     })
     .then(item => {
         res.status(201).json(item);
