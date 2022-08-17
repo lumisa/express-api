@@ -18,6 +18,7 @@ const etapaTypes = require('../controllers/etapaType.controller')
 const clienteTypes = require('../controllers/clienteType.controller')
 const formaPago = require('../controllers/formaPago.controller')
 const plazosPago = require('../controllers/plazosPago.controller')
+const docPago = require('../controllers/docPago.controller')
 const bonificacion = require('../controllers/bonificacion.controller')
 
 //subvencion
@@ -103,12 +104,19 @@ router.get('/formaPago/:id', sec.auth, formaPago.detail);
 router.patch('/formaPago/:id', sec.auth, formaPago.update);
 router.delete('/formaPago/:id', sec.auth, formaPago.remove);
 
-//cliente_types
+//plazosPago
 router.get('/plazosPago', sec.auth, plazosPago.list);
 router.post('/plazosPago', sec.auth, plazosPago.create)
 router.get('/plazosPago/:id', sec.auth, plazosPago.detail);
 router.patch('/plazosPago/:id', sec.auth, plazosPago.update);
 router.delete('/plazosPago/:id', sec.auth, plazosPago.remove);
+
+//docPago
+router.get('/docPago', sec.auth, docPago.list);
+router.post('/docPago', sec.auth, docPago.create)
+router.get('/docPago/:id', sec.auth, docPago.detail);
+router.patch('/docPago/:id', sec.auth, docPago.update);
+router.delete('/docPago/:id', sec.auth, docPago.remove);
 
 //activities
 router.get('/activities', sec.auth, activities.list);
