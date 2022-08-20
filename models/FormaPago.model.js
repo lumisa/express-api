@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const schema = new mongoose.Schema({
     formaPago_description: {
         type: String,
-        required: true,
+        required: false,
         },
     plazos:{
         type: mongoose.ObjectId,
-        required: required,
+        required: false,
         },
     documentacion:{
         type: mongoose.ObjectId,
