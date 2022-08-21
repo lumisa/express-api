@@ -27,12 +27,12 @@ const schema = new mongoose.Schema({
         type: mongoose.ObjectId,
         required: false,
     },
-    /* quotation: [new mongoose.Schema({ path: String })], */
+    installer: String,
+    engineer: String,
+    formaPago_id: mongoose.ObjectId,
     tramites: [
         new mongoose.Schema ({tramite_title: String, tramite_description: String, date: Date, done: Boolean})
-    ],
-        
-
+    ]
 
 }, { timestamps: true,
 
