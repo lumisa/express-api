@@ -69,7 +69,10 @@ const schema = new mongoose.Schema({
     },
     autorizacion_file: String,
     certificado_bancario_file: String,
-
+    tipoCliente: {
+        type: mongoose.ObjectId,
+        required: false,
+    },
 }, { timestamps: true,
     toJSON: {
         transform: (doc, ret) => {

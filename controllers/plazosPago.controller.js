@@ -16,7 +16,7 @@ const create = (req, res, next) => {
 
     PlazosPago.create({
         ...data,
-        image: req.file?.path
+        //todo
     })
     .then(item => {
         res.status(201).json(item);

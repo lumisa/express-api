@@ -20,6 +20,7 @@ const formaPago = require('../controllers/formaPago.controller')
 const plazosPago = require('../controllers/plazosPago.controller')
 const docPago = require('../controllers/docPago.controller')
 const bonificacion = require('../controllers/bonificacion.controller')
+const puntoConexion = require('../controllers/puntoConexion.controller')
 
 //subvencion
 router.get('/subvencion', sec.auth, subvencion.list)
@@ -131,6 +132,13 @@ router.post('/contacts', sec.auth, contacts.create)
 router.get('/contacts/:id', sec.auth, contacts.detail);
 router.patch('/contacts/:id', sec.auth, contacts.update);
 router.delete('/contacts/:id', sec.auth, contacts.remove);
+
+//puntoConexion
+router.get('/puntoConexion', sec.auth, puntoConexion.list);
+router.post('/puntoConexion', sec.auth, puntoConexion.create)
+router.get('/puntoConexion/:id', sec.auth, puntoConexion.detail);
+router.patch('/puntoConexion/:id', sec.auth, puntoConexion.update);
+router.delete('/puntoConexion/:id', sec.auth, puntoConexion.remove);
 
 //stages
 router.get('/stages', sec.auth, stages.list);

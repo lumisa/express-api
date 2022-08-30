@@ -1,9 +1,9 @@
-const ClienteTypes = require('../models/Etapa_type.model');
+const PuntoConexion = require('../models/PuntoConexion.model');
 const createError = require('http-errors');
 
 const list = (req, res, next) => {
 
-    ClienteTypes.find()
+    PuntoConexion.find()
     .then(item => {
         res.json(item);
     })
@@ -14,9 +14,8 @@ const create = (req, res, next) => {
     
     const data = req.body;
 
-    ClienteTypes.create({
+    PuntoConexion.create({
         ...data,
-        //todo
     })
     .then(item => {
         res.status(201).json(item);
@@ -25,7 +24,7 @@ const create = (req, res, next) => {
 }
 
 const detail = (req, res, next) => {
-    ClienteTypes.findById(req.params.id)
+    PuntoConexion.findById(req.params.id)
     .then(item => {
 
         if (item) {
@@ -40,7 +39,7 @@ const detail = (req, res, next) => {
 const update = (req, res, next) => {
     const body = {title, address, description, phoneNumber} = req.body;
 
-    ClienteTypes.findByIdAndUpdate(req.params.id, body, { new: true }).then( item => {
+    PuntoConexion.findByIdAndUpdate(req.params.id, body, { new: true }).then( item => {
         if (item) {
             res.json(item);
         } else {
@@ -50,7 +49,7 @@ const update = (req, res, next) => {
 }
 
 const remove = (req, res, next) => {
-    ClienteTypes.findByIdAndRemove(req.params.id)
+    PuntoConexion.findByIdAndRemove(req.params.id)
     .then(() => res.status(204).send())
     .catch(next);
 }
